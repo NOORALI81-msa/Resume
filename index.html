@@ -759,7 +759,7 @@
             transform: translateX(5px);
         }
         
-        /* Contact Section */
+        /* Contact Section - Fixed Responsiveness */
         .contact {
             background-color: var(--darker);
             position: relative;
@@ -782,6 +782,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 50px;
+            align-items: flex-start;
         }
         
         .contact-info {
@@ -792,6 +793,7 @@
         .contact-info h3 {
             color: var(--light);
             margin-bottom: 20px;
+            font-size: 1.5rem;
         }
         
         .contact-detail {
@@ -813,6 +815,7 @@
             font-size: 1.2rem;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             transition: all 0.3s ease;
+            flex-shrink: 0;
         }
         
         .contact-detail:hover .contact-icon {
@@ -820,6 +823,11 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
             color: var(--light);
             background: linear-gradient(145deg, var(--primary), var(--accent));
+        }
+        
+        .contact-text {
+            flex: 1;
+            word-break: break-word;
         }
         
         .contact-text a {
@@ -836,6 +844,7 @@
             display: flex;
             gap: 15px;
             margin-top: 30px;
+            flex-wrap: wrap;
         }
         
         .social-link {
@@ -850,6 +859,7 @@
             text-decoration: none;
             transition: all 0.3s ease;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            flex-shrink: 0;
         }
         
         .social-link:hover {
@@ -878,6 +888,7 @@
             transition: all 0.3s ease;
             background-color: var(--health-blue);
             color: var(--light);
+            font-size: 1rem;
         }
         
         .form-control:focus {
@@ -891,7 +902,7 @@
             resize: vertical;
         }
         
-        /* Footer */
+        /* Footer - Fixed Responsiveness */
         footer {
             background-color: var(--darker);
             color: var(--secondary);
@@ -920,6 +931,8 @@
             color: var(--light);
             position: relative;
             padding: 0 20px;
+            line-height: 1.6;
+            word-wrap: break-word;
         }
         
         .footer-quote::before, .footer-quote::after {
@@ -952,6 +965,8 @@
             color: var(--secondary);
             text-decoration: none;
             transition: color 0.3s ease;
+            font-size: 1rem;
+            padding: 5px 10px;
         }
         
         .footer-link:hover {
@@ -962,6 +977,63 @@
             margin-top: 30px;
             padding-top: 20px;
             border-top: 1px solid rgba(136, 146, 176, 0.2);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design for Contact and Footer */
+        @media (max-width: 768px) {
+            .contact-container {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .contact-info, .contact-form {
+                width: 100%;
+            }
+            
+            .contact-detail {
+                flex-direction: column;
+                align-items: flex-start;
+                text-align: left;
+            }
+            
+            .contact-icon {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+            
+            .footer-quote {
+                font-size: 1rem;
+                padding: 0 15px;
+            }
+            
+            .footer-links {
+                gap: 10px;
+            }
+            
+            .footer-link {
+                font-size: 0.9rem;
+                padding: 5px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .footer-quote {
+                font-size: 0.9rem;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            .footer-link {
+                font-size: 0.85rem;
+            }
+            
+            .copyright {
+                font-size: 0.8rem;
+            }
         }
         
         /* Responsive Design */
@@ -1155,8 +1227,8 @@
         <div class="hero-buttons">
             <a href="#projects" class="btn">View My Work</a>
             <a href="#contact" class="btn btn-outline">Get In Touch</a>
-            <a href="MULLA_NOORALI_CV.pdf" download class="btn btn-cv">
-                <i class="fas fa-download"></i> Download CV
+            <!-- <a href="MULLA_NOORALI_CV.pdf" download class="btn btn-cv"> -->
+                <!-- <i class="fas fa-download"></i> Download CV -->
             </a>
         </div>
         
@@ -1181,10 +1253,10 @@
                 <h2>About Me</h2>
             </div>
             <div class="about-content">
-                <div class="about-image">
+                <!-- <div class="about-image">
                     <div class="image-container">
                         <img src="https://placehold.co/400x500/64ffda/0a192f?text=M.Noorali" alt="Mulla Noorali">
-                    </div>
+                    </div> -->
                 </div>
                 <div class="about-text">
                     <h3>Health Informatics Professional</h3>
@@ -1388,7 +1460,7 @@
                         <a href="https://www.linkedin.com/in/mulla-noorali-2b9171255/" class="social-link"><i class="fab fa-linkedin-in"></i></a>
                         <a href="mailto:mullanoorali2@gmail.com" class="social-link">
                             <i class="fas fa-envelope"></i>
-                        <!-- <a href="#" class="social-link"><i class="fab fa-twitter"></i></a> -->
+                        </a>
                     </div>
                 </div>
                 <div class="contact-form">
@@ -1415,11 +1487,10 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p class="footer-quote">"Healthcare innovation requires both technical expertise and clinical understanding - I bridge that gap."</p>
+            <p class="footer-quote">"Healthcare innovation requires both technical expertise and clinical understanding - we can bridge that gap."</p>
             <div class="footer-links">
                 <a href="#hero" class="footer-link">Home</a>
                 <a href="#about" class="footer-link">About</a>
-                <a href="#education" class="footer-link">Education</a>
                 <a href="#skills" class="footer-link">Skills</a>
                 <a href="#projects" class="footer-link">Projects</a>
                 <a href="#contact" class="footer-link">Contact</a>
